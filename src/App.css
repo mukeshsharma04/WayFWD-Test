@@ -36,6 +36,27 @@
 }
 
 .Result {
-  display: block;
-  background-color: red;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-color: #3f3a3a;
+  color: white;
+  word-break: break-word;
+  text-align: end;
+}
+
+.Calc-Container {
+  width: 250px;
+  height: 350px;
+}
+
+.Numbers {
+  display: flex;
+  flex-direction: column;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
 }

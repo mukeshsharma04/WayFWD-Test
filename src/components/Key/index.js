@@ -1,14 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const handleButtonClick = (keyLabel) => {
-  console.log(keyLabel);
-};
-
 const Key = ({ keyLabel, clickHandler }) => (
-  <div className="Container" onClick={() => clickHandler(keyLabel)}>
+  <button className="Container" onClick={() => clickHandler(keyLabel)}>
     {keyLabel}
-  </div>
+  </button>
 );
 
 export default Key;

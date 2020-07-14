@@ -1,11 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Key from './components/Key';
-
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-const operators = ['+', '-', '*', '/'];
 
 const INIT_STATE = {
   input: '',
@@ -47,23 +43,35 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <div className="Result">Result: {result ? result : input}</div>
-          <div>
-            {numbers.map((number) => (
-              <Key keyLabel={number} clickHandler={this.setInputState} />
-            ))}
-          </div>
-          <div>
-            {operators.map((operator) => (
-              <Key
-                keyLabel={operator}
-                clickHandler={this.handleOperatorClick}
-              />
-            ))}
-          </div>
-          <div>
-            <Key keyLabel="C" clickHandler={this.handleOperatorClick} />
-            <Key keyLabel="=" clickHandler={this.handleResult} />
+          <div className="Calc-Container">
+            <div className="Result">{result ? result : input}</div>
+
+            <div className="Row">
+              <Key keyLabel="C" clickHandler={this.clearInputState} />
+              <Key keyLabel="/" clickHandler={this.handleOperatorClick} />
+            </div>
+            <div className="Row">
+              <Key keyLabel="7" clickHandler={this.setInputState} />
+              <Key keyLabel="8" clickHandler={this.setInputState} />
+              <Key keyLabel="9" clickHandler={this.setInputState} />
+              <Key keyLabel="*" clickHandler={this.handleOperatorClick} />
+            </div>
+            <div className="Row">
+              <Key keyLabel="4" clickHandler={this.setInputState} />
+              <Key keyLabel="5" clickHandler={this.setInputState} />
+              <Key keyLabel="6" clickHandler={this.setInputState} />
+              <Key keyLabel="-" clickHandler={this.handleOperatorClick} />
+            </div>
+            <div className="Row">
+              <Key keyLabel="1" clickHandler={this.setInputState} />
+              <Key keyLabel="2" clickHandler={this.setInputState} />
+              <Key keyLabel="3" clickHandler={this.setInputState} />
+              <Key keyLabel="+" clickHandler={this.handleOperatorClick} />
+            </div>
+            <div className="Row">
+              <Key keyLabel="0" clickHandler={this.setInputState} />
+              <Key keyLabel="=" clickHandler={this.handleResult} />
+            </div>
           </div>
         </header>
       </div>
